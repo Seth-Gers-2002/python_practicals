@@ -32,12 +32,8 @@ numbers = [1, 19, 123, 456, -25]
 for i, number in enumerate(numbers, 1):
     print(f"Number {i} is {number:5}")
 
-
 print(f"{year} {name} for about {cost:,.0f} ")
 
-Using a for loop with the range function and string formatting,
-# produce the following right-aligned output (DO NOT use a list):
-#   0
-#  50
-# 100
-# 150
+for l in range(0, 200, 50):
+    print(f"{l}")
+

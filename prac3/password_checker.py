@@ -45,7 +45,10 @@ def is_valid_password(password):
         else:#check
             count_special += 1
     print(count_upper, count_lower, count_digit, count_special)
-    # TODO: if any of the 'normal' counts are zero, return False
+    if (count_upper, count_lower, count_digit, count_special) >= 1:
+        return True
+    else:
+        return False
 
     # TODO: if special characters are required, then check the count of those
     # and return False if it's zero

@@ -42,18 +42,15 @@ def is_valid_password(password):
             count_lower += 1
         elif char.isdigit():
             count_digit += 1
-        else:#check
+        elif char in SPECIAL_CHARACTERS:
             count_special += 1
-    print(count_upper, count_lower, count_digit, count_special)
-    if (count_upper, count_lower, count_digit, count_special) >= 1:
-        return True
-    else:
+    print(count_upper, count_lower, count_digit, count_special) # remove
+    if (count_upper and count_lower and count_digit) < 1:
         return False
+    if SPECIAL_CHARS_REQUIRED:
+        if count_special < 1:
+            return False
 
-    # TODO: if special characters are required, then check the count of those
-    # and return False if it's zero
-
-    # if we get here (without returning False), then the password must be valid
     return True
 
 

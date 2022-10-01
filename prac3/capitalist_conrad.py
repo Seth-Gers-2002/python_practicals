@@ -19,9 +19,9 @@ INITIAL_PRICE = 10.0
 number_of_days = 0
 
 price = INITIAL_PRICE
-print("${:,.2f}".format(price))
-# Added a print to new file
 out_file = open("OUTPUT_FILE", 'w')
+print("starting value${:,.2f}".format(price), file=out_file)
+# Added a print to new file
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
@@ -41,6 +41,5 @@ while MIN_PRICE <= price <= MAX_PRICE:
     price *= (1 + price_change)
     # Changed string to f-string
     print(f"day {number_of_days} price is:", f"${price:.2f}", file=out_file)
-    open("stock_report.txt", 'w')
 
 out_file.close()

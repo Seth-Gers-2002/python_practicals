@@ -20,7 +20,7 @@ add_to_name.close()
 
 #2
 read_name = open("name.txt", 'r')
-answer = read_name.readline()
+answer = read_name.read()
 print("Your name is", answer)
 read_name.close()
 

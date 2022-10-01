@@ -1,10 +1,10 @@
 """
-Check if a generated score is valid
+CP1404/CP5632 - Practical
 """
 import random
 
 
-def main(score):
+def score_check(score):
     """Give a score a rating """
     if score < 0.00 or score > 100.00:
         return "Invalid score"
@@ -15,8 +15,11 @@ def main(score):
     else:
         return "Bad"
 
+def main(number):
+    """"Generate random number"""
+    for i in range(0, number, 1):
+        score = random.randint(0, 100)
+        print(score, "is" ,score_check(score))
 
-score = float(input("Enter score: "))
-print(main(score))
-score = random.randint(0, 100)
-print(main(score))
+
+main((int(input("how many? "))))

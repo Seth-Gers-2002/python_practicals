@@ -1,19 +1,14 @@
-def main():
-    password = get_password()
-
-    print_censor(password)
-
-
-def print_censor(password):
-    print("*" * len(password))
+"""
+program gets a password and censors it over a certain length
+"""
 
 
-def get_password():
-    password = input("password:")
+def get_password(password):
+    """Check the length of the password"""
     while len(password) <= 9:
-        print("invaild")
-        password = input("password:")
+        password = input("Invalid password: ")
     return password
 
 
-main()
+password = input("password:")
+print("*" * len(get_password(password)))

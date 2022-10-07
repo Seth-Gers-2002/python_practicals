@@ -8,28 +8,25 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    print(data)
+    print_information(data)
+
+
+def print_information(list):
+    for index in range(0, len(list)):
+        print(f"{list[index][0]} is taught by, {list[index][1]} and has {list[index][2]}")
+
 
 def get_data():
-    stored = [[]]
-    z = 1
+    stored = []
     """Read data from file formatted like: subject,lecturer,number of students."""
     input_file = open(FILENAME)
     for line in input_file:
-        # print(line)  # See what a line looks like
-        # print(repr(line))  # See what a line really looks like
-        line = line.strip()  # Remove the \n
 
+        line = line.strip()  # Remove the \n
         parts = line.split(',')  # Separate the data into its parts
         stored.append(parts)
-        print(f"{stored[z][0]} is taught by, {stored[z][1]} and has {stored[z][2]}")
-        z += 1
-        # print(l)
-        # print(parts)  # See what the parts look like (notice the integer is a string)
-        # parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
-        # print(parts)  # See if that worked
-        # print("----------")
-    input_file.close()
 
+    input_file.close()
+    return stored
 
 main()

@@ -11,16 +11,20 @@ def main():
     print(data)
 
 def get_data():
-    l = [[]]
+    stored = [[]]
+    z = 1
     """Read data from file formatted like: subject,lecturer,number of students."""
     input_file = open(FILENAME)
     for line in input_file:
-        print(line)  # See what a line looks like
-        print(repr(line))  # See what a line really looks like
+        # print(line)  # See what a line looks like
+        # print(repr(line))  # See what a line really looks like
         line = line.strip()  # Remove the \n
+
         parts = line.split(',')  # Separate the data into its parts
-        l.append(parts)
-        print(l)
+        stored.append(parts)
+        print(f"{stored[z][0]} is taught by, {stored[z][1]} and has {stored[z][2]}")
+        z += 1
+        # print(l)
         # print(parts)  # See what the parts look like (notice the integer is a string)
         # parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         # print(parts)  # See if that worked

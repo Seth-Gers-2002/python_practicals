@@ -49,3 +49,13 @@ for digit in numbers:
 # TODO: (more advanced) use a list comprehension and the join string method
 # to create a string (not list) of the last names for those full names longer than 11 characters
 # the result should be: 'Harlem, Hendrix, Lovelace'
+
+text = "last names for those full names longer than 11 characters"
+
+for name in full_names:
+    first_last = name.split(" ")
+    last_name = first_last[1]
+    if len(name) > 11:
+        text += ", " + last_name
+
+print(text)

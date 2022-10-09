@@ -10,6 +10,7 @@ if 9 in numbers:
     print("9 is in numbers")
 else:
     print("not in numbers")
+
 # numbers[0]
 # print 3
 # numbers[-1]

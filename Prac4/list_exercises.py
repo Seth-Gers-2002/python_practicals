@@ -13,7 +13,7 @@ def numbers_sorted():
     numbers_max = organised[4]
     print(f"numbers_min:{numbers_min}, numbers_max{numbers_max}")
     average = sum(numbers) / 5
-    print(average)
+    print(f"{average}")
 
 
 def print_numbers():
@@ -24,7 +24,7 @@ def print_numbers():
 
 
 def get_numbers():
-    for i in range(0, 5, 1):
+    for i in range(5):
         number = int(input("number"))
         numbers.append(number)
 

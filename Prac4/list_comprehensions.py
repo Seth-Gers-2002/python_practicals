@@ -29,29 +29,18 @@ print(a_names)
 # 'Ada Alan Angel Bob Jimi'
 print(" ".join(sorted(names)))
 
-lowercase_full_names = []
-for name in full_names:
-    lowercase = name.lower()
-    lowercase_full_names.append(lowercase)
+lowercase_full_names = (name.lower() for name in full_names)
+print(lowercase_full_names)
 
 almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
-numbers = []
-for digit in almost_numbers:
-    number = int(digit)
-    numbers.append(number)
+numbers = [int(almost_numbers) for almost_numbers in almost_numbers]
+print(numbers)
 
-greater_numbers = []
-for digit in numbers:
-    if digit > 9:
-        greater_numbers.append(digit)
+greater_numbers = [number for number in numbers if number > 9]
+print(greater_numbers)
 
 
-text = "last names for those full names longer than 11 characters"
-
-for name in full_names:
-    first_last = name.split(" ")
-    last_name = first_last[1]
-    if len(name) > 11:
-        text += ", " + last_name
-
-print(text)
+long_names = "last names for those full names longer than 11 characters"
+first_last = [name.split(" ") for name in full_names if len(name) > 11]
+last_name = [first_last[1] for first_last in first_last]
+print(", ".join(last_name))

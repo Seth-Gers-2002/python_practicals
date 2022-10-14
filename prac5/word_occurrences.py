@@ -1,16 +1,15 @@
 """
 word occurrences
-estimated:40
+estimated:35
 actual:
 """
 
-stored = []
+stored = {}
 sentence = input("sentence: ").split(" ")
 
 for word in sentence:
     if word not in stored:
-        stored.append(word)
+        stored.update({word:int(1)})
     else:
-        print("ahh")
-
+        stored[word] = stored.get(word) + 1
 print(stored)

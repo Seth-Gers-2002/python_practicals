@@ -12,4 +12,4 @@ for word in sentence:
         stored.update({word:int(1)})
     else:
         stored[word] = stored.get(word) + 1
-print(stored)
+print(sorted(stored.items()))

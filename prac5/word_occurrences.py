@@ -1,7 +1,7 @@
 """
 word occurrences
 estimated:35
-actual:
+actual: 1hr, 10 mins
 """
 
 number_of_letters = {}

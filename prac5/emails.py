@@ -1,7 +1,8 @@
-"""
-come back and figure out why we need join
 
-"""
+def main():
+    email_to_name = get_name_and_email()
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
 
 
 def check_if_name_is_correct(name):
@@ -13,23 +14,24 @@ def check_if_name_is_correct(name):
         return name_correct
 
 
-def main():
+def get_name_and_email():
     email_to_name = {}
     email = input("Email: ")
     email_split = email.split("@")
+
     while email != "":
         if "." in email_split[0]:
             name = email_split[0].replace(".", " ").title()
         else:
             name = email_split[0].title()
+
         print(f"is your name {name}?")
         name_checked = check_if_name_is_correct(name)
         email_to_name[email] = name_checked
 
         email = input("Email: ")
         email_split = email.split("@")
-    for email, name in email_to_name.items():
-        print(f"{name} ({email})")
+    return email_to_name
 
 
 main()

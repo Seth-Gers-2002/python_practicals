@@ -28,6 +28,10 @@ def display_info(champion_wins, countries):
     print(",".join(country for country in sorted(countries)))
 
 
-a = get_information()
-b = process_records(a)
-display_info(b[0], b[1])
+def main():
+    information_gathered = get_information()
+    records_processed = process_records(information_gathered)
+    display_info(records_processed[0], records_processed[1])
+
+
+main()

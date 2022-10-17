@@ -20,11 +20,6 @@ def main():
         except:
             print("incorrect phrase")
         state_code = input("Enter short state: ").upper()
-        # if state_code in code_to_name:
-        #     print(f"{state_code:{max_length}} is {code_to_name[state_code]}")
-        # else:
-        #     print("Invalid short state")
-        # state_code = input("Enter short state: ").upper()
 
 
 main()

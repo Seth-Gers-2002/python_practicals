@@ -12,8 +12,19 @@ def get_information():
             parts = line.split(',')
             stored.append(parts)
     in_file.close()
+    print(stored)
     return stored
 
+def process_records(records):
+    champion_to_count = {}
+    countries = set()
+    for record in records:
+        countries.add(record[1])
+        try:
+            champion_to_count[record[2]] += 1
+        except KeyError:
+            champion_to_count[record[2]] = 1
+    print(champion_to_count, countries)
+    return champion_to_count, countries
 
-
-get_information()
+process_records(get_information())

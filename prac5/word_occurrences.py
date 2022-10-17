@@ -13,8 +13,9 @@ for word in sentence:
     else:
         number_of_letters[word] = number_of_letters.get(word) + 1
 
+sorted_number_of_letters = (sorted(number_of_letters.items()))
+
 max_length = max(len(name) for name in number_of_letters)
 
-sorted_number_of_letters = (sorted(number_of_letters.items()))
 for word in sorted_number_of_letters:
     print(f"{word[0]:{max_length}} {word[1]}")

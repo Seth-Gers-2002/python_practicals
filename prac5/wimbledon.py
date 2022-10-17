@@ -25,6 +25,7 @@ def get_information():
 def display_info(champion_wins, countries):
     for name, number in champion_wins.items():
         print(name, number)
+    print(f"These {len(countries)} have won Wimbledon:")
     print(",".join(country for country in sorted(countries)))
 
 

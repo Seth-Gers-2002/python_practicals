@@ -5,8 +5,8 @@
 
 class Guitar:
 
-    def __init__(self, name="", year=0, cost=0):
-        self.age = None
+    def __init__(self, name=" ", year=0, cost=0):
+        self.age = 2022
         self.name = name
         self.year = year
         self.cost = cost
@@ -15,8 +15,8 @@ class Guitar:
         return f"{self.name} ({self.year}) : ${self.cost},"
 
     def get_age(self):
-        self.age = 2022 - self.year
-        return self.age
+        age = self.age - self.year
+        return age
 
     def is_vintage(self):
         if self.age >= 50:

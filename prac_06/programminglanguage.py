@@ -1,7 +1,7 @@
 
 class ProgrammingLanguage:
 
-    def __int__(self, field, typing, reflection, year):
+    def __init__(self, field, typing, reflection, year):
         """Construct a Programming language"""
         self.field = field
         self.typing = typing
@@ -12,4 +12,4 @@ class ProgrammingLanguage:
         return f"{self.field}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
 
     def is_dynamic(self):
-        return self.typing == "Dynamic"
+        return self.typing ==  "Dynamic"

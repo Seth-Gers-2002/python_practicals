@@ -1,5 +1,5 @@
+from prac6.programminglanguage import ProgrammingLanguage
 
-from prac_06.programminglanguage import ProgrammingLanguage
 
 def main():
     python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
@@ -15,5 +15,5 @@ def main():
         if language.is_dynamic():
             print(f"{language.field} is dynamic")
 
-main()
 
+main()

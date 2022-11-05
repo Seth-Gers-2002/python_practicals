@@ -3,12 +3,10 @@ import csv
 options = ("L:load projects", "S:save projects", "D:display projects", "F:filiter projects by date", "A:add new project", "U:update project")
 projects = []
 
-while choice != "Q":
+for i in options:
+    print(i)
 
-    for i in options:
-        print(i)
-
-    choice = input(">>>").upper()
+while choice != "S":
     if choice == "L":
         with open("projects.csv", "r", encoding="utf-8-sig") as in_file:
             """Gets information from csv then saves the raw and processed information"""
@@ -35,22 +33,25 @@ while choice != "Q":
         percentage = input("completion percentage:")
         projects.append([name, date, priority, cost, percentage])
     if choice == "U":
-        try:
-            project_number = int(input("input project number:")) - 1
-            change = input("P:change priority or C:change percentage or O:To leave").upper()
-        except ValueError:
-            print("incorrect value")
+        project_number = int(input("input project number:")) - 1
+        change = input("P:change priority or C:change percentage or O:To leave").upper()
         if change == "P":
-            projects[project_number][2] = int(input("priority:"))
+            projects[[project_number][2]] = int(input("priority:"))
         elif change == "C":
-            projects[project_number][4] = int(input("percentage"))
+            projects[[project_number][4]] = int(input("percentage"))
+
+    with open('projects.csv', 'w', newline='') as out_file:
+        writer = csv.writer(out_file)
+        writer.writerows(projects)
+    out_file.close()
 
 
 
     """
-    save projects
     filter projects by date
     """
+choice = input(">>>").upper()
+
 
 
 

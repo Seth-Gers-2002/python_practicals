@@ -10,3 +10,4 @@ while get_colour != "":
         print("Invalid colour-name")
     get_colour = input("what colour?")
     correct_get_colour = get_colour.lower().replace(" ", "")
+key = lambda x: x[1]

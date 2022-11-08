@@ -6,6 +6,7 @@ guitars = []
 raw_guitars = []
 
 with open("guitars.csv", "r", encoding="utf-8-sig") as in_file:
+    """Gets information from csv then saves the raw and processed information"""
     in_file.readline()
     for line in in_file:
         line = line.strip()
@@ -15,9 +16,9 @@ with open("guitars.csv", "r", encoding="utf-8-sig") as in_file:
         cost = float(parts[2])
         raw_guitars.append((name, year, cost))
         guitars.append(Guitar(name, year, cost))
-
     in_file.close()
 
+"""prompts the user for input and information"""
 name = input("name:")
 while name != "":
     year = int(input("year:"))
@@ -28,6 +29,7 @@ while name != "":
     guitars.append(details)
     name = input("name:")
 
+"""prints and exports the information"""
 if guitars:
     guitars.sort()
     print("guitars:")

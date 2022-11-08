@@ -1,17 +1,16 @@
 """
-do datetime
+Seth Gersbach
 """
 
 import csv
 import datetime
-
-options = ("L:load projects", "S:save projects", "D:display projects", "F:filiter projects by date", "A:add new project", "U:update project")
 projects = []
 
-for i in options:
-    print(i)
 
-choice = input(">>>").upper()
+def Option_display():
+    options = ("L:load projects", "S:save projects", "D:display projects", "F:filiter projects by date", "A:add new project", "U:update project")
+    for i in options:
+        print(i)
 
 
 def Add_Info():
@@ -28,6 +27,9 @@ def Add_Info():
         except ValueError or IndexError:
             print("Incorrect, input again")
 
+Option_display()
+
+choice = input(">>>").upper()
 
 
 while choice != "S":
@@ -43,18 +45,30 @@ while choice != "S":
     if choice == "D":
         """Displays menu input options"""
         if projects:
-            i = 1
+            stored = []
+            print("Incomplete projects: ")
             for project in projects:
-                print(f"{i} ", ", ".join(project))
-                i += 1
+                if project[4] != '100':
+                    print(", ".join(project))
+                elif project[4] == '100':
+                    stored.append(project)
+            if stored:
+                print("Completed projects")
+                for store in stored:
+                    print(", ".join(store))
         else:
             print("nothing to print")
     if choice == "A":
         projects.append(Add_Info())
     if choice == "U":
+        i = 1
+        for project in projects:
+            print(f"{i} ", ", ".join(project))
+            i += 1
         """Update and reorganise the data"""
         if projects:
             project_number = int(input("input project number:")) - 1
+            print(", ".join(projects[project_number]))
             change = input("P:change priority or C:change percentage or O:To leave").upper()
             if change == "P":
                 projects[[project_number][2]] = int(input("priority:"))
@@ -70,10 +84,11 @@ while choice != "S":
             if check_date == search_date:
                 print(dates)
 
+    Option_display()
     choice = input(">>>").upper()
 
-# with open('projects.csv', 'w', newline='') as out_file:
-#     writer = csv.writer(out_file)
-#     writer.writerows(projects)
-# out_file.close()
+with open('projects.csv', 'w', newline='') as out_file:
+    writer = csv.writer(out_file)
+    writer.writerows(projects)
+out_file.close()
 

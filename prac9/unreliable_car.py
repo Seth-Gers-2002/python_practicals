@@ -1,9 +1,11 @@
 from random import randint
+
 from prac9.car import Car
 
-class Unreliable_car(Car):
 
-    def __init__(self, name, fuel, reliability = 0.00):
+class UnreliableCar(Car):
+
+    def __init__(self, name, fuel, reliability=0.00):
         super().__init__(name, fuel)
         self.name = name
         self.fuel = fuel
@@ -12,6 +14,10 @@ class Unreliable_car(Car):
 
     def __str__(self):
         """Return a string like a Car but with current fare distance."""
-        return f"{super().__str__()}, {self.reliability}"
+        return f"{super().__str__()}, {self.reliability}%"
 
-
+    def drive(self, distance):
+        ability = randint(0, 100)
+        if ability <= self.reliability:
+            return "you can drive"
+        return "you cannot drive"

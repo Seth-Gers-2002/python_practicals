@@ -12,7 +12,7 @@ def main():
         elif choice == "M":
             print(wikipedia.summary(search))
         elif choice == "P":
-            print(wikipedia.page(search))
+            print(wikipedia.page(search), autosuggest=False)
         else:
             print("please input an appropriate search term")
 

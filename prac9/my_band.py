@@ -5,7 +5,7 @@ from guitar import Guitar
 
 
 def main():
-    band = Band("Extreme")
+    # band = Band("Extreme")
     nuno = Musician("Nuno Bettencourt")
     nuno.add(Guitar("Washburn N4", 1990, 2499.95))
     nuno.add(Guitar("Takamine acoustic", 1986, 1200.0))

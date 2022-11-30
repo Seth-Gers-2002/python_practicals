@@ -13,3 +13,7 @@ print(f"{other.name} get_age() - Expected {5}. Got {other.get_age()}")
 print()
 print(f"{guitar.name} is_vintage() - Expected {True}. Got {guitar.is_vintage()}")
 print(f"{other.name} is_vintage() - Expected {False}. Got {other.is_vintage()}")
+
+default = Guitar()
+print(default)
+assert default.name == ""
